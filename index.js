@@ -19,6 +19,7 @@ if (!process.argv[2]) {
   console.log("Please provide domain : ");
   return;
 }
+const url = process.argv[2];
 fetchData(url).then(async (res) => {
   const html = res.data;
   const $ = cheerio.load(html);
