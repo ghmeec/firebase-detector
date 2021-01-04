@@ -1,6 +1,5 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-const url = "http://ma.co.tz";
 
 async function fetchData(url) {
   console.log("Crawling data...");
@@ -16,9 +15,9 @@ async function fetchData(url) {
 function extractJS() {}
 
 console.log("Extracting the js script for : ", process.argv[2]);
-if(!(process.argv[2])){
-  console.log("Please provide domain : ")
-  return
+if (!process.argv[2]) {
+  console.log("Please provide domain : ");
+  return;
 }
 fetchData(url).then(async (res) => {
   const html = res.data;
